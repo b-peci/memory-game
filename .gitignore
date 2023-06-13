@@ -2,6 +2,14 @@
 
 # dependencies
 /node_modules
+/Game/ABI.json
+/Game/Address.json
+
+
+/GNFT/abi.json
+/GNFT/address.json
+
+
 /.pnp
 .pnp.js
 
