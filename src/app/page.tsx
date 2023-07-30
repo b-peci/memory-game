@@ -51,16 +51,16 @@ const Content = () => {
 
   useEffect(() => {
     Moralis.enableWeb3().then(async res => {
-      await getUserTokens({onSuccess: async res => {
+      await getUserTokens({onSuccess: async (res : any) => {
+        console.log(res);
         for(let i =0 ; i < res.length; i++) {
-          console.log(res[0].toString())
           setTokenId(res[0].toString())
             await getTokenData({
-              onSuccess: res => {
+              onSuccess: (res : any) => {
                 const response = confirm('You have a token with the functionality '
                 + res.tokenFunctionality + '\n Do you want to use it?')
                 if(response) {
-                  setTimer(timer + 10);
+                  setTimer(timer + 30);
                 }
               },
               onError: err => console.log(err)
